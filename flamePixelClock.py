@@ -48,8 +48,7 @@ for i in panelData:
 	MESSAGE_BODY += '\n' + ''.join(map(str, i))
 
 #set up the socket
-sock = socket.socket(socket.AF_INET, # Internet
-                     socket.SOCK_DGRAM) # UDP
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
 
 #send the header and body including the textified time
 sock.sendto(MESSAGE_HEADER + MESSAGE_BODY, (UDP_IP, UDP_PORT))
